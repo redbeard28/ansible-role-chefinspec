@@ -1,0 +1,17 @@
+---
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Ruby dev needs"
+  package:
+    pkg: ruby-dev
+    state: latest
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Install inspec-bin"
+  gem:
+    name: inspec-bin
+    state: latest
+    user_install: true
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Install InSpec"
+  gem:
+    name: inspec
+    state: latest
+    user_install: true
